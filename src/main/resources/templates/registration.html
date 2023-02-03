@@ -1,0 +1,39 @@
+<!--<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>-->
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+</head>
+<body>
+<form th:action="@{/register}" method="post" th:object="${userModel}">
+    <div class="alert alert-info" th:if="${successMessage}" th:utext="${successMessage}"></div>
+    <div class="alert alert-info" th:if="${errorMessage}" th:utext="${errorMessage}"></div>
+    <table>
+        <tr>
+            <td><label>Full name</label></td>
+            <td><input name="fullName"/></td>
+        </tr>
+        <tr>
+            <td><label>Username</label></td>
+            <td><input name="userName"/></td>
+        </tr>
+        <tr>
+            <td><label>Email</label></td>
+            <td><input type="email" name="email"/></td>
+        </tr>
+        <tr>
+            <td><label>Password</label></td>
+            <td><input type="password" name="password"/></td>
+        </tr>
+        <tr>
+            <td><label>Confirm Password</label></td>
+            <td><input type="password" name="confirmPassword"/></td>
+        </tr>
+        <tr>
+        <td><input type="submit" value="Submit"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

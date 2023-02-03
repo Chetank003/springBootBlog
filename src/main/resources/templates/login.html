@@ -1,0 +1,26 @@
+<!--<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>-->
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+</head>
+<body>
+<form th:action="@{/blog}" method="post" th:object="${loginModel}">
+    <div class="alert alert-info" th:if="${successMessage}" th:utext="${successMessage}"></div>
+    <div class="alert alert-info" th:if="${errorMessage}" th:utext="${errorMessage}"></div>
+    <table>
+            <td><label>Email</label></td>
+            <td><input type="email" name="email"/></td>
+        </tr>
+        <tr>
+            <td><label>Password</label></td>
+            <td><input type="password" name="password"/></td>
+        </tr>
+        <tr>
+        <td><input type="submit" value="Submit"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
